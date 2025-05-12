@@ -29,13 +29,16 @@ int calcularMDC(int a, int b) {
 }
 
 // Função para calcular o inverso modular com passo a passo
+
+
+
 int calcularInversoModular(int a, int m) {
     int oldR = a, r = m;
     int oldS = 1, s = 0;
     int oldT = 0, t = 1;
     int passo = 1;
 
-    printf("\nPasso 2: Inverso de G em Z(%d)\n", m);
+printf("\nPasso 2: Inverso de G em Z(%d)\n", m);
     while (r != 0) {
         int q = oldR / r;
         int temporario;
@@ -64,20 +67,19 @@ int calcularInversoModular(int a, int m) {
     if (oldS < 0) oldS += m;
     printf("Inverso: %d\n", oldS);
     return oldS;
-}
-
-// Verifica se é primo 
-int verificarNumeroPrimo(int n) {
+    }
+    // Verifica se é primo 
+    int verificarNumeroPrimo(int n) {
     if (n <= 1) return 0;
     if (n <= 3) return 1;
     if (n % 2 == 0 || n % 3 == 0) return 0;
     for (int i = 5; i * i <= n; i += 6)
         if (n % i == 0 || n % (i + 2) == 0) return 0;
     return 1;
-}
-
-// Função totiente de Euler
-int calcularEuler(int n) {
+    }
+    
+    // Função totiente de Euler
+    int calcularEuler(int n) {
     int r = n;
     int i = 2;
     if (n % i == 0) {
@@ -92,10 +94,10 @@ int calcularEuler(int n) {
     }
     if (n > 1) r -= r / n;
     return r;
-}
-
-// Exponenciação modular rápida
-int potenciaModular(int base, int exp, int mod) {
+    }
+    
+    // Exponenciação modular rápida
+    int potenciaModular(int base, int exp, int mod) {
     int result = 1;
     base %= mod;
     while (exp > 0) {
@@ -106,9 +108,9 @@ int potenciaModular(int base, int exp, int mod) {
         exp /= 2;
     }
     return result;
-}
-
-int main() {
+    }
+    
+    int main() {
     printf("----- Forneça os Valores -----\n");
     int valorH = lerEntradaPositiva("H: ");
     int valorG = lerEntradaPositiva("G: ");
